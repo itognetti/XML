@@ -5,15 +5,15 @@
 
     <xsl:template match="biblioteca">
         <html>
-        <head>
-            <title>Prestamos de <xsl:value-of select="//usuario[@id='usuario1']/datos_personales/nombre"/></title>
-        </head>
-        <body>
-            <xsl:apply-templates/>
-            <xsl:call-template name="usuario">
-                <xsl:with-param name="user" select="//usuario[@id='usuario1']" />
-            </xsl:call-template>
-        </body>
+            <head>
+                <title>Prestamos de <xsl:value-of select="//usuario[@id=$usuario]/datos_personales/nombre"/></title>
+            </head>
+            <body>
+                <xsl:apply-templates/>
+                <xsl:call-template name="usuario">
+                    <xsl:with-param name="user" select="//usuario[@id=$usuario]" />
+                </xsl:call-template>
+            </body>
         </html>
     </xsl:template>
 
